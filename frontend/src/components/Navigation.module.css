@@ -1,0 +1,154 @@
+.header {
+    background-color: var(--color-surface);
+    border-block-end: 1px solid var(--color-border);
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem clamp(0.5rem, 3.7vw, 3.5rem);
+    inline-size: min(var(--page-width), calc(100% - 2 * var(--page-gutter)));
+    margin-inline: auto;
+    padding-block: clamp(0.625rem, 1.2vw, 1.125rem);
+    font-size: clamp(0.875rem, 0.875rem + 0.75vw, 1.625rem);
+    line-height: 1.2;
+}
+
+.nav > * {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: clamp(2.75rem, 3.9vw, 3.75rem);
+    font-weight: 600;
+}
+
+.homeLink {
+    gap: clamp(0.5rem, 1.2vw, 1.25rem);
+    color: inherit;
+    text-decoration: none;
+}
+
+.homeMark {
+    position: relative;
+    inline-size: 1.55em;
+    block-size: 1em;
+    flex: none;
+}
+
+.homeMark::before,
+.homeMark::after {
+    position: absolute;
+    inset-block-start: 0.05em;
+    inline-size: 0.9em;
+    block-size: 0.9em;
+    border-radius: 2px;
+    background-color: var(--color-accent);
+    content: "";
+    transform: rotate(45deg) scale(0.8);
+}
+
+.homeMark::before {
+    inset-inline-start: 0.1em;
+}
+
+.homeMark::after {
+    inset-inline-start: 0.55em;
+    border: 1px solid #84a3f7;
+    background-color: var(--color-accent-hover);
+}
+
+.loginButton {
+    margin-inline-start: auto;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.homeLink:hover,
+.loginButton:hover {
+    color: var(--color-accent);
+}
+
+.primaryLink {
+    justify-content: center;
+    padding: 0.5rem clamp(0.625rem, 1.6vw, 1.5rem);
+    border-radius: 8px;
+    background-color: var(--color-accent);
+    color: var(--color-surface);
+    text-align: center;
+    text-decoration: none;
+}
+
+.primaryLink:hover {
+    background-color: var(--color-accent-hover);
+}
+
+.dialog {
+    inline-size: min(28rem, calc(100% - 2rem));
+    padding: clamp(1.25rem, 4vw, 2rem);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    background-color: var(--color-surface);
+    color: var(--color-text);
+}
+
+.dialog::backdrop {
+    background-color: rgb(20 35 60 / 55%);
+}
+
+.dialog h2 {
+    margin-block: 0 1rem;
+    line-height: 1.2;
+}
+
+.fields {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.fields label {
+    font-weight: 600;
+}
+
+.fields input {
+    min-inline-size: 0;
+    min-block-size: 2.75rem;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #677c98;
+    border-radius: 6px;
+    background-color: var(--color-surface);
+    color: var(--color-text);
+}
+
+.fields label:not(:first-child) {
+    margin-block-start: 0.5rem;
+}
+
+.dialogActions {
+    display: flex;
+    justify-content: flex-end;
+    margin-block-start: 1.5rem;
+}
+
+.closeButton {
+    min-block-size: 2.75rem;
+    padding-inline: 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background-color: var(--color-surface);
+    color: inherit;
+    cursor: pointer;
+}
+
+.closeButton:hover {
+    background-color: var(--color-page);
+}
+
+@media (max-width: 24rem) {
+    .nav {
+        column-gap: 0.625rem;
+        font-size: 0.9375rem;
+    }
+}

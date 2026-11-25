@@ -1,0 +1,33 @@
+:root {
+    --color-page: #f2f5fa;
+    --color-surface: #fff;
+    --color-text: #14233c;
+    --color-muted: #485a72;
+    --color-accent: #204dce;
+    --color-accent-hover: #193da7;
+    --color-border: #c7d3e2;
+    --page-gutter: clamp(1rem, 3.6vw, 3.5rem);
+    --page-width: 90rem;
+
+    background-color: var(--color-page);
+    color: var(--color-text);
+    font-family: system-ui, sans-serif;
+    line-height: 1.5;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+button, input {
+    font: inherit;
+}
+
+:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
+}

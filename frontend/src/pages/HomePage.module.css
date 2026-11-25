@@ -1,0 +1,51 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    min-block-size: 100svh;
+}
+
+.hero {
+    display: grid;
+    flex: 1;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    gap: clamp(2rem, 3.4vw, 3.25rem);
+    inline-size: min(var(--page-width), calc(100% - 2 * var(--page-gutter)));
+    margin-inline: auto;
+    padding-block: clamp(2rem, 5svh, 5rem);
+}
+
+.title {
+    max-inline-size: 12ch;
+    margin: 0;
+    font-size: clamp(2.625rem, 7.05vw, 6.75rem);
+    font-weight: 750;
+    letter-spacing: -0.07em;
+    line-height: 0.98;
+    overflow-wrap: anywhere;
+}
+
+.description {
+    max-inline-size: 36ch;
+    margin-block: clamp(1rem, 3.5vw, 3.25rem) 0;
+    color: var(--color-muted);
+    font-size: clamp(1.125rem, 2.55vw, 2.5rem);
+    line-height: 1.35;
+}
+
+.artwork {
+    display: block;
+    inline-size: 100%;
+    block-size: auto;
+}
+
+@media (max-width: 48rem) {
+    .hero {
+        grid-template-columns: minmax(0, 1fr);
+        align-content: start;
+    }
+
+    .artwork {
+        max-inline-size: 36rem;
+    }
+}
